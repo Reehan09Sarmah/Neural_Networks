@@ -1,8 +1,8 @@
 import numpy as np
-import tensorflow as tf
 from keras import Sequential
 from keras.layers import Dense
 from keras.losses import BinaryCrossentropy
+from keras.optimizers import Adam
 
 # Important
 # Choosing Correct Activation Function
@@ -16,7 +16,7 @@ from keras.losses import BinaryCrossentropy
 # Design the model
 model = Sequential([
     Dense(units=3, activation='relu'),
-    Dense(units=1, activation='sigmoid')
+    Dense(units=1, activation='linear')
 ])
 
 x = np.array([[200, 17],
@@ -26,8 +26,10 @@ x = np.array([[200, 17],
 y = np.array([1, 0, 0, 1])
 
 # compile the model with correct loss function
-model.compile(loss=BinaryCrossentropy())
+# use Adam Algorithm to handle learning rate automatically --> optimizes gradient descent
+model.compile(optimizer=Adam(learning_rate=1e-3), loss=BinaryCrossentropy())
 model.fit(x, y, epochs=100)  # Fit the dataset into the model
+
 temperature = int(input('Enter temperature (in deg celsius)'))
 duration = int(input('Enter duration (in mins)'))
 percent = model.predict([[temperature, duration]])  # predict data
