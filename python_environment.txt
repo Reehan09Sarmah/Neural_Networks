@@ -1,0 +1,9 @@
+To set up the environment:
+- Go inside the folder where we'll code
+- python -m venv <project name>, for eg: python -m venv imageclassification
+- activate it --> .\<project name>\Scripts\activate
+- pip install ipykernel:  inside environment
+- To use it: python -m ipykernel install --name=<project_name>
+- To get all kernels list --> jupyter kernelspec list
+- to delete one --> jupyter kernelspec uninstall <project_name>
+- inside jupyter notebook, change kernel to <project_name>
