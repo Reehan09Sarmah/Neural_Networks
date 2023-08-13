@@ -1,0 +1,5 @@
+OOB Evaluation (Out of Bag)
+
+	We do sampling with replacement whenever we pick from datasets and feed them to the different trees in 	Random Forest Model. So there's a possibility that some rows of data (samples) will be picked multiple times 	and some will not be even picked.The rows which are never picked are called "Out of Bag" samples. So these 	OOB samples are the ones that your model has never seen. So now, you can use these samples to test your model 	once its training is over.
+	
+	Mathematically Proven : 37% of the rows roughly are left out while sampling. 37% becomes OOB. So we can use 		them as a validation set for your model

@@ -1,0 +1,19 @@
+Hyper_Parameters:
+
+    Tuning RF Classifier:
+        - n_estimators : Number of Decision Trees in your model to be used
+        - max_features : from the no. of features in dataset, how many to use
+        - bootstrap    : if True then sampling with replacement else not
+        - max_samples  : no. of rows you would give to each decision tree (optimum: 50%-70% of dataset)
+
+    Other hyper_parameters are same as that of decision trees
+
+    Some other parameters:
+        - n_jobs       :  parallely train decision trees using multiple cores
+        - random_state :  controls randomness of sampling of data (bootstrap) and features (during split)
+        - warm_start   :  when to train algo in stages (some data now, some later)
+        - class_weight :  when you have imbalanced dataset (less data for some classes), add weights to classes
+
+
+    For RandomForestClassifier : criterion = {'gini' or 'entropy'}
+    For RandomForestRegressor  : criterion = {'mse' or 'mae'}
