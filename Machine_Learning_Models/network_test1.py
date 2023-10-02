@@ -35,7 +35,6 @@ model = keras.Sequential([
     keras.layers.Dense(128, activation='relu'),
     keras.layers.Dense(10, activation='softmax')
 ])
-
 model.compile(optimizer='adam', loss=keras.losses.SparseCategoricalCrossentropy(), metrics=["accuracy"])
 
 model.fit(train_images, train_labels, epochs=5)
@@ -48,7 +47,7 @@ prediction = model.predict(test_images)
 # index with the class names.
 
 # let's check the prediction for 1st 5 images of test set
-for i in range(6, 10):
+for i in range(1, 3):
     plt.grid(False)
     plt.imshow(test_images[i], cmap=plt.cm.binary)
     plt.xlabel(f"Actual: index = {test_labels[i]} -> {class_names[test_labels[i]]}")
